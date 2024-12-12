@@ -11,6 +11,7 @@ class ShowPost extends Component
 
     public function mount(Post $post)
     {
+        $post->load('user');
         $this->post = $post;
     }
 

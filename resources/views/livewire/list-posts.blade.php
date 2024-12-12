@@ -17,7 +17,8 @@
                 <ul class="px-10 p-6 text-gray-900 dark:text-gray-100">
                     @forelse ($posts as $post)
                         <li class="list-disc">
-                            <a href="{{ route('post.show', $post) }}">{{ $post->title }}</a>
+                            <a class="underline" href="{{ route('post.show', $post) }}"
+                                wire:navigate>{{ $post->title }}</a>
                             <span class="font-bold italic"> by {{ $post->user->name }}</span>
                         </li>
                     @empty
