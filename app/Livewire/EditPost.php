@@ -14,6 +14,8 @@ class EditPost extends Component
     public function mount(Post $post)
     {
         $this->post = $post;
+        $this->title = $post->title;
+        $this->content = $post->content;
     }
     public array $rules = [
         'title' => 'required|string',
@@ -32,7 +34,6 @@ class EditPost extends Component
         $this->post->update([
             'title' => $this->title,
             'content' => $this->content,
-            'user_id' => auth()->id(),
         ]);
 
         return redirect()->route('post.index')->with('success_message', 'Post was successfully created.');

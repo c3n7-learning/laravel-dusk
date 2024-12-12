@@ -17,12 +17,6 @@ Route::view('profile', 'profile')
 Route::middleware('auth')->group(function () {
     Route::get('/post/create', CreatePost::class)->name('post.create');
     Route::get('/post/{post}/edit', EditPost::class)->name('post.edit');
-
-    // Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
-    // Route::post('/post', [PostController::class, 'store'])->name('post.store');
-    // Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
-    // Route::patch('/post/{post}', [PostController::class, 'update'])->name('post.update');
-    // Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.delete');
 });
 
 Route::get('/', ListPosts::class)->name('post.index');
