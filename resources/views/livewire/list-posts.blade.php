@@ -39,7 +39,7 @@
                 <div class="px-6 my-5" x-data="{
                     dadJoke: null
                 }">
-                    <x-primary-button class="mt-3"
+                    <x-primary-button class="mt-3" dusk="dad-joke"
                         x-on:click="
                             console.log('Hallo');
                             axios.get('https://api.chucknorris.io/jokes/random', {
@@ -68,13 +68,13 @@
                     isVisible: false
                 }">
 
-                    <x-primary-button class="mt-3" x-on:dblclick="isVisible = !isVisible">
+                    <x-primary-button class="mt-3" x-on:dblclick="isVisible = !isVisible" dusk="double-click">
                         Double click me
                     </x-primary-button>
 
-                    <x-primary-button class="mt-3" x-show="isVisible">
+                    <div class="text-gray-900 dark:text-gray-100 mt-3" x-show="isVisible">
                         Double clicked!
-                    </x-primary-button>
+                    </div>
                 </div>
 
                 <hr>
@@ -88,9 +88,9 @@
                         Right click me
                     </x-primary-button>
 
-                    <x-primary-button class="mt-3" x-show="isVisible">
+                    <div class="text-gray-900 dark:text-gray-100 mt-3" x-show="isVisible">
                         Right clicked!
-                    </x-primary-button>
+                    </div>
                 </div>
 
                 <hr>
@@ -106,7 +106,7 @@
                             }
                         " />
                     <div x-show="isVisible" class="mt-4">
-                        Command + B pressed
+                        Ctrl + B pressed
                     </div>
                 </div>
             </div>
