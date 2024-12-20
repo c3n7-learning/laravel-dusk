@@ -1,4 +1,5 @@
 <x-card>
+    <h2 class="text-lg mb-2">Edit Post</h2>
     <form wire:submit="submit">
         <!-- Title -->
         <div>
@@ -14,7 +15,7 @@
             <x-input-error :messages="$errors->get('content')" class="mt-2" />
         </div>
 
-        <x-primary-button class="mt-3">
+        <x-primary-button class="mt-3" dusk="edit-post">
             {{ __('Save') }}
         </x-primary-button>
     </form>

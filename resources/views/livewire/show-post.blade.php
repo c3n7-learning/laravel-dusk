@@ -1,7 +1,9 @@
 <x-card>
     <section class="flex flex-col gap-2">
         <div class="font-bold">
-            {{ $post->title }}
+            <a href="{{ route('post.edit', $post) }}" wire:navigate>
+                {{ $post->title }}
+            </a>
         </div>
         <div class="">
             {{ $post->content }}
@@ -10,10 +12,16 @@
             {{ $post->user->name }} - {{ $post->created_at->toDayDateTimeString() }}
         </div>
 
-        <a href="{{ route('post.edit', $post) }}" wire:navigate>
-            <x-primary-button>
-                {{ __('Edit Post') }}
-            </x-primary-button>
-        </a>
+        <div class="flex gap-2">
+            <a href="{{ route('post.edit', $post) }}" wire:navigate>
+                <x-primary-button>
+                    {{ __('Edit Post') }}
+                </x-primary-button>
+
+                <x-secondary-button wire:click='delete' dusk="delete-post">
+                    {{ __('Delete Post') }}
+                </x-secondary-button>
+            </a>
+        </div>
     </section>
 </x-card>

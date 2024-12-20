@@ -19,4 +19,11 @@ class ShowPost extends Component
     {
         return view('livewire.show-post');
     }
+
+    public function delete()
+    {
+        $this->post->delete();
+
+        return redirect()->route('post.index')->with('success_message', 'Post was successfully deleted.');
+    }
 }

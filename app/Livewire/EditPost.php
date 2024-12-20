@@ -36,6 +36,6 @@ class EditPost extends Component
             'content' => $this->content,
         ]);
 
-        return redirect()->route('post.index')->with('success_message', 'Post was successfully created.');
+        return redirect()->route('post.index')->with('success_message', 'Post was successfully edited.');
     }
 }
