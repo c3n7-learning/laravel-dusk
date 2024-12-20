@@ -18,9 +18,9 @@
                     {{ __('Edit Post') }}
                 </x-primary-button>
 
-                <x-secondary-button wire:click='delete' dusk="delete-post">
+                <x-danger-button wire:click='delete' dusk="delete-post">
                     {{ __('Delete Post') }}
-                </x-secondary-button>
+                </x-danger-button>
             </a>
         </div>
     </section>
